@@ -5,9 +5,8 @@ class IntervalUnregister extends ReturnValue
     {config} = envelope
 
     devices: [config.deviceId]
-    topic: 'unregister'
+    topic: 'unregister-interval'
     payload:
-      repeat: config.repeat
       nodeId: config.id
 
 module.exports = IntervalUnregister
