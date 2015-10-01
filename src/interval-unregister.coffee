@@ -8,5 +8,6 @@ class IntervalUnregister extends ReturnValue
     topic: 'unregister-interval'
     payload:
       nodeId: config.id
+      nonce: config.nanocyte?.nonce
 
 module.exports = IntervalUnregister

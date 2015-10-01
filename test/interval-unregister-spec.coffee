@@ -17,6 +17,8 @@ describe 'IntervalUnregister', ->
             repeat: 1000
             id: 'the-node-uuid'
             deviceId: 'some-hardcoded-uuid'
+            nanocyte:
+              nonce: 'no-nce'
 
       it 'should return a message', ->
         expect(@result).to.deep.equal
@@ -24,6 +26,7 @@ describe 'IntervalUnregister', ->
           topic: 'unregister-interval'
           payload:
             nodeId: 'the-node-uuid'
+            nonce: 'no-nce'
 
     describe 'when called with an envelope, the envelope strikes back', ->
       beforeEach ->
@@ -33,6 +36,8 @@ describe 'IntervalUnregister', ->
             repeat: 1001
             id: 'the-edon-uuid'
             deviceId: 'some-softcoded-uuid'
+            nanocyte:
+              nonce: 'noncense'
 
       it 'should return a message', ->
         expect(@result).to.deep.equal
@@ -40,3 +45,4 @@ describe 'IntervalUnregister', ->
           topic: 'unregister-interval'
           payload:
             nodeId: 'the-edon-uuid'
+            nonce: 'noncense'
